@@ -31,6 +31,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "multi_xml"
   gem.add_dependency "builder"
 
+  gem.add_development_dependency "test-unit"
   gem.add_development_dependency "turn"
   gem.add_development_dependency "shoulda"
   gem.add_development_dependency "sdoc"

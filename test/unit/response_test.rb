@@ -19,7 +19,7 @@ module DopisOnlineClient
   #    assert_equal Date.parse("2009-06-08"),  response.success_result["datumpodani"]
       assert_not_nil                          response.price
       assert_equal false,                     response.color
-      assert_equal "195",                     response.shipping_method
+      assert_equal "100195",                  response.shipping_method
     end
 
     should "parse failure correctly" do

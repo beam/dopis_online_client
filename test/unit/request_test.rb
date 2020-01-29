@@ -15,7 +15,8 @@ module DopisOnlineClient
       end
 
       should "set default options for sending" do
-        assert_equal 195, @request.options.postage_type
+        assert_equal 100195, @request.options.postage_type
+        assert_equal "1k", @request.options.service_type
         assert_equal 0, @request.options.coupon_type
         assert_equal 0, @request.options.print_type
         assert_equal 2, @request.options.sender_type
@@ -33,4 +34,3 @@ module DopisOnlineClient
     end
   end
 end
-

@@ -7,11 +7,12 @@ module DopisOnlineClient
 
     include HTTMultiParty
 
-    DEFAULTS = {:postage_type => 195, # common
+    DEFAULTS = {:postage_type => 100195, # common
                 :coupon_type => 0, # do not print
                 :print_type => 0, # one-sided print
                 :sender_type => 2, # from 1st page of the document
                 :recipient_type => 2,
+                :service_type => "1k",
                 :format => :xml
     }
 
@@ -76,6 +77,7 @@ module DopisOnlineClient
       xml.instruct! :xml, :encoding => "UTF-8"
       xml.dataroot do |dataroot|
         dataroot.typvyplatneho options.postage_type
+        dataroot.sluzby options.service_type
         dataroot.typtisku options.print_type
         dataroot.tiskpoukazky options.coupon_type
         dataroot.typods options.sender_type
