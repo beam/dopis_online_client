@@ -47,7 +47,7 @@ module DopisOnlineClient
     # Returns new DopisOnlineClient::Response
     #
     def deliver
-      response = self.class.post '/dopisonline/donApi.php', :body => body
+      response = self.class.post '/dopisonline/donApi.php', :body => body, :verify => false
       parsed_response = parse_response(response.body)
       DopisOnlineClient::Response.new(parsed_response, response.body, response.code)
     end
